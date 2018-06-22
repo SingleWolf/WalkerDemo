@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">沃 逮</string>
+    <string name="prompt_email">请输入邮箱</string>
+    <string name="prompt_password">请输入密码</string>
+    <string name="action_sign_in">登 录</string>
+    <string name="wx_auto_reply_description">微信自动回复</string>
+    <string name="auto_install_description">自动安装</string>
+    <string name="auto_hbao_description">微信红包自动抢</string>
+    <string name="wx_atuo_reply_msg">呃,有点忙,稍后回复恁...</string>
+</resources>

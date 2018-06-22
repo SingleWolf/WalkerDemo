@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="loading"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="24sp" />
+
+            <com.bsx.baolib.view.loading.DotsTextView
+                android:id="@+id/dtv_load"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="24sp"
+                app:autoplay="true"
+                app:period="1000" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <ImageView
+            android:id="@+id/iv_svg_anim"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_refresh_svg_anim" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <com.bsx.baolib.view.loading.LoadingView
+            android:id="@+id/lv_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            app:loadingText="加载中..." />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateDrawable="@anim/anim_progressbar"
+            android:indeterminateDuration="1000" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/green">
+
+            <com.bsx.baolib.view.loading.Win10Progress
+                android:id="@+id/progress_win10"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+        </FrameLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <com.bsx.baolib.view.loading.RoundProgressBar
+            android:id="@+id/progress_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+
+        <com.bsx.baolib.view.loading.RoundProgressBar2
+            android:id="@+id/progress_r2_1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="20dp"
+            app:roundColor="#D1D1D1"
+            app:roundProgressColor="@android:color/black"
+            app:roundTextColor="#9A32CD"
+            app:roundTextSize="18sp"
+            app:roundWidth="10dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <com.bsx.baolib.view.loading.RoundProgressBar2
+            android:id="@+id/progress_r2_2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="20dp"
+            app:roundProgressColor="#C2C2C2"
+            app:roundStyle="FILL"
+            app:roundWidth="1dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <com.bsx.baolib.view.loading.HorizontalProgressBar
+            android:id="@+id/progress_h"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <com.bsx.baolib.view.loading.FlikerProgressBar
+            android:id="@+id/progress_fliker"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:loadingColor="#40c4ff"
+            app:stopColor="#ff9800"
+            app:textSize="12sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <Button
+            android:id="@+id/btn_custom_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:text="自定义进度框" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

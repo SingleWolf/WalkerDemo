@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.walker">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!-- 获取logcat日志 -->
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 相机权限 -->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--抢红包-->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+
+    <application
+        android:name=".WalkerApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!--登录-->
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait">
+            <!-- <intent-filter>
+                 <action android:name="android.intent.action.MAIN"/>
+
+                 <category android:name="android.intent.category.LAUNCHER"/>
+             </intent-filter>-->
+        </activity>
+        <!--主页面-->
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--WebView-->
+        <activity
+            android:name=".activity.WebActivity"
+            android:screenOrientation="portrait" />
+        <!--android deep link-->
+        <activity
+            android:name=".activity.DeepLinkActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+
+                <data android:scheme="com.walker.webtest"></data>
+            </intent-filter>
+        </activity>
+        <!--沉浸式模式-->
+        <activity android:name=".activity.SteepModeActivity" />
+        <!--自动抢红包-->
+        <activity
+            android:name=".activity.WxhbaoActivity"
+            android:screenOrientation="portrait" />
+        <!--底部导航栏-->
+        <activity android:name=".activity.BottomBarActivity" />
+        <!--图片选择器-->
+        <activity android:name=".activity.ImgPickerActivity" />
+        <!--实用小技巧-->
+        <activity android:name=".activity.SkillsActivity" />
+        <!--翻页滑动专栏-->
+        <activity android:name=".activity.ScrollPagerActivity" />
+        <!--守护服务-->
+        <service
+            android:name=".service.GrayService"
+            android:enabled="true"></service>
+        <service
+            android:name=".service.WxAutoReplyService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="微信自动回复"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/wx_auto_reply_service_config" />
+        </service>
+        <service
+            android:name=".service.AutoInstallService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="自动安装小能手"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/auto_install_services_config" />
+        </service>
+        <service
+            android:name=".service.WxAutoHbaoService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="红包小微助手"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:sharedUserId="android.uid.system">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/wx_auto_hbao_service_config" />
+        </service>
+        <service
+            android:name=".service.WxhbaoNotifyService"
+            android:label="红包小微通知"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+
+        </service>
+        <!--Android N 使用FileProvider-->
+        <provider
+            android:authorities="${applicationId}.provider"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

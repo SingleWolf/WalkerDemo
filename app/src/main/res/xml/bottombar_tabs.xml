@@ -1,0 +1,17 @@
+<tabs xmlns:android="http://schemas.android.com/apk/res/android">
+    <tab
+        barColorWhenSelected="@color/red"
+        icon="@drawable/ic_favorites"
+        id="@+id/tab_favorites"
+        title="Favorites" />
+    <tab
+        barColorWhenSelected="@color/blue"
+        icon="@drawable/ic_nearby"
+        id="@+id/tab_nearby"
+        title="Nearby" />
+    <tab
+        barColorWhenSelected="@color/green"
+        icon="@drawable/ic_friends"
+        id="@+id/tab_friends"
+        title="Friends" />
+</tabs>

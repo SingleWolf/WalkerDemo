@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">baolIb</string>
+    <!--FilePicker START-->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="all_images">所有图片</string>
+    <string name="done">完 成</string>
+    <string name="permission_camera_rationale">Camera permission is needed to show the camera preview.</string>
+    <string name="permission_contacts_rationale">Contacts permissions are needed to demonstrate access to the contacts database.</string>
+    <string name="permission_camera_denied">Camera permission was denied. Please consider granting it in order to access the camera!</string>
+    <string name="permission_camera_never_askagain">Camera permission was denied with never ask again.</string>
+    <string name="no_files_found">暂未发现文件</string>
+    <!--FilePicker END-->
+</resources>

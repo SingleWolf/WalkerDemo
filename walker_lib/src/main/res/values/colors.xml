@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 程序主题色 -->
+    <color name="baotheme">#34A3D4</color>
+    <!-- 屏幕填充色 -->
+    <color name="baofill">#F2ECE7</color>
+    <!--城市列表-->
+    <color name="error_color">#FF4081</color>
+    <color name="font_text">#666</color>
+    <color name="color_999">#999</color>
+    <color name="color_eee">#eee</color>
+    <color name="font_info">#999</color>
+    <color name="font_tips">#CCC</color>
+    <color name="divider">#EEE</color>
+    <color name="border_block">#EAEAEA</color>
+    <color name="textcolor">#63B8FF</color>
+    <color name="color_ccc">#CCC</color>
+    <!--温度仪表盘 START-->
+    <!--指针左半部分颜色-->
+    <color name="leftPointer">#e1dcd6</color>
+    <!--指针右半部分颜色-->
+    <color name="rightPointer">#f4efe9</color>
+    <!--背景颜色-->
+    <color name="temperatureBackground">#FFFAFA</color>
+    <!--温度仪表盘 END-->
+
+    <!--FilePicker START-->
+    <color name="bg_gray">#ecedef</color>
+    <color name="transparent_black">#94333232</color>
+    <drawable name="tab_gray">@color/bg_gray</drawable>
+    <drawable name="tab_white">@android:color/white</drawable>
+    <!--FilePicker END-->
+    <!--loadingview-->
+    <color name="triangle">#aa72d572</color>
+    <color name="circle">#aa738ffe</color>
+    <color name="rect">#aae84e40</color>
+    <color name="view_bg">#00000000</color>
+    <color name="shadow">#25808080</color>
+    <color name="dialog_bg">#f5f5f5</color>
+
+    <!--recordview-->
+    <color name="RoundColor">#DAF6FE</color>
+    <color name="TimeTextColor">#FF84AD</color>
+    <color name="RoundFillColor">#45C3E5</color>
+    <color name="RoundHintTextColor">#666666</color>
+</resources>

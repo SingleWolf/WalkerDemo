@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_guide"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_default" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:layout_weight="3"
+        android:background="@color/whitesmoke"
+        android:clipChildren="false">
+
+        <com.bsx.baolib.view.CustomViewPager
+            android:id="@+id/pager_take"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="5dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:overScrollMode="never"></com.bsx.baolib.view.CustomViewPager>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/whitesmoke">
+
+        <TextView
+            android:id="@+id/tv_label"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="车头照" />
+
+        <com.bsx.baolib.view.CircleTextView
+            android:id="@+id/ctv_take"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="拍摄"
+            android:textColor="@color/gray" />
+
+        <com.bsx.baolib.view.CircleTextView
+            android:id="@+id/ctv_cancel"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/gray" />
+    </RelativeLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+</LinearLayout>

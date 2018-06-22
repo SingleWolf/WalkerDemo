@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自定义横向ProgressBar -->
+    <declare-styleable name="HorizontalProgressBar">
+        <attr name="progress_unreached_color" format="color" />
+        <attr name="progress_reached_color" format="color" />
+        <attr name="progress_reached_bar_height" format="dimension" />
+        <attr name="progress_unreached_bar_height" format="dimension" />
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+        <attr name="progress_text_offset" format="dimension" />
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>
+    <!-- 自定义环形ProgressBar -->
+    <declare-styleable name="RoundProgressBar">
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+    <!-- 自定义环形ProgressBar -->
+    <declare-styleable name="RoundProgressBar2">
+        <attr name="roundColor" format="color" />
+        <attr name="roundProgressColor" format="color" />
+        <attr name="roundWidth" format="dimension"></attr>
+        <attr name="roundTextColor" format="color" />
+        <attr name="roundTextSize" format="dimension" />
+        <attr name="roundMax" format="integer"></attr>
+        <attr name="textIsDisplayable" format="boolean"></attr>
+        <attr name="roundStyle">
+            <enum name="STROKE" value="0"></enum>
+            <enum name="FILL" value="1"></enum>
+        </attr>
+    </declare-styleable>
+    <!-- 圆角图标容器 -->
+    <attr name="borderRadius" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+
+    <declare-styleable name="CustomShapeImageView">
+        <attr name="borderRadius" />
+        <attr name="type" />
+    </declare-styleable>
+    <!--温度仪表盘-->
+    <declare-styleable name="temperatureProgress">
+        <!--圆弧宽度-->
+        <attr name="progressWidth" format="dimension" />
+        <!--当前温度数值-->
+        <attr name="tempText" format="string" />
+        <!--当前温度数值大小-->
+        <attr name="tempTextSize" format="dimension" />
+    </declare-styleable>
+    <!--FilePicker START-->
+    <declare-styleable name="SmoothCheckBox">
+        <attr name="duration" format="integer" />
+        <attr name="stroke_width" format="dimension" />
+        <attr name="color_tick" format="color" />
+        <attr name="color_checked" format="color" />
+        <attr name="color_unchecked" format="color" />
+        <attr name="color_unchecked_stroke" format="color" />
+    </declare-styleable>
+    <!--FilePicker END-->
+    <!--FlikerProgressBar-->
+    <declare-styleable name="FlikerProgressBar">
+        <attr name="textSize" format="dimension|reference" />
+
+        <attr name="loadingColor" format="color|reference" />
+
+        <attr name="stopColor" format="color|reference" />
+
+    </declare-styleable>
+
+    <declare-styleable name="WaitingDots">
+        <attr name="dotsColor" format="color" />
+        <attr name="period" format="integer" />
+        <attr name="jumpHeight" format="integer" />
+        <attr name="autoplay" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="LoadingView">
+        <attr name="loadingText" format="string" />
+        <attr name="loadingTextAppearance" format="reference" />
+    </declare-styleable>
+
+    <!--recordView-->
+    <declare-styleable name="recordView">
+        <attr name="hintText" format="string"/>
+        <attr name="playHintText" format="string"/>
+        <attr name="timeTextColor" format="reference"/>
+        <attr name="hintTextSize" format="dimension"/>
+        <attr name="middleLineHeight" format="dimension"/>
+        <attr name="progressSrc" format="reference"/>
+        <attr name="middleLineColor" format="reference"/>
+        <attr name="unit" format="string"/>
+        <attr name="model">
+            <enum name="record_model" value="1"/>
+            <enum name="play_model" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="AutoWrapTextViewStyle">
+        <attr name="paddingLeft" format="dimension" />
+        <attr name="paddingTop" format="dimension" />
+        <attr name="paddingRight" format="dimension" />
+        <attr name="paddingBottom" format="dimension" />
+        <attr name="textAutoSize" format="dimension" />
+        <attr name="textAutoColor" format="color" />
+        <attr name="lineSpacingExtra" format="integer" />
+    </declare-styleable>
+</resources>

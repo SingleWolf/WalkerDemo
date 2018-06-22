@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        signConfig {
+            keyAlias 'drip'
+            keyPassword 'hutu1234'
+            storeFile file('C:/Users/Administrator/Desktop/drip.jks')
+            storePassword 'hutu1234'
+        }
+    }
+
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.walker"
+        minSdkVersion 18
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        signingConfig signingConfigs.signConfig
+        resConfigs "zh","zh-rCN"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //设置维度就是该版本号，这样维度就是都是统一的了
+        flavorDimensions "versionCode"
+    }
+
+    buildTypes {
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            //加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            //加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signConfig
+        }
+    }
+
+    productFlavors {
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            if (variant.buildType.name == "release") {
+                outputFileName = "walker_${defaultConfig.versionCode}.apk"
+            } else {
+                outputFileName = "walker_${defaultConfig.versionCode}_beta.apk"
+            }
+        }
+    }
+
+    //禁止AAPT来优化PNG图片，以优化APK大小
+    aaptOptions{
+        cruncherEnabled=false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':walker_lib')
+    //UiAutomator
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+    //compile 'com.android.support:customtabs:+'
+    implementation 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    implementation 'com.roughike:bottom-bar:2.0.2'
+
+}

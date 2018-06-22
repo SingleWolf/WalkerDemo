@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string name="create_summary">
+CREATE TABLE SUMMARY (
+SHOW_ID text not null,
+ICON text,
+SUMMARY text not null,
+DESCRIPTION text not null,
+CLASS_NAME text not null,
+CLASS_TYPE text not null,
+STAR_LEVEL text,
+SHOW_TYPE text not null,
+ACTIVE text default \'1\',
+CREATE_DATE text not null,
+SPARE_1 text,
+SPARE_2 text,
+SPARE_3 text,
+CONSTRAINT SUMMARY_PRIKEY PRIMARY KEY (SHOW_ID,CLASS_NAME)
+);
+ </string>
+ <string name="getSummaryByType">
+  select ICON,SUMMARY,DESCRIPTION,CLASS_NAME,CLASS_TYPE,STAR_LEVEL,SHOW_TYPE,CREATE_DATE,SPARE_1,SPARE_2,SPARE_3 from SUMMARY where ACTIVE=\'1\' and SHOW_TYPE=?
+ </string>
+ <string name="getSummary">
+  select ICON,SUMMARY,DESCRIPTION,CLASS_NAME,CLASS_TYPE,STAR_LEVEL,SHOW_TYPE,CREATE_DATE,SPARE_1,SPARE_2,SPARE_3 from SUMMARY where ACTIVE=\'1\'
+ </string>
+ <string name="getAllCounty">
+  select COUNTY_NAME from COUNTY
+ </string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_auto_hbao"
+        android:title="打开自动抢红包服务"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_wx_notify"
+        android:title="打开极速抢红包服务"
+        app:showAsAction="never" />
+</menu>

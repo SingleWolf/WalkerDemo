@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:title="浏览分类">
+        <item
+            android:id="@+id/item_ui"
+            android:checkable="true"
+            android:icon="@drawable/ic_view"
+            android:title="视图布局"/>
+        <item
+            android:id="@+id/item_data"
+            android:checkable="true"
+            android:icon="@drawable/ic_archive"
+            android:title="数据逻辑"/>
+        <item
+            android:id="@+id/item_test"
+            android:checkable="true"
+            android:icon="@drawable/ic_test"
+            android:title="测试用例"/>
+        <item
+            android:id="@+id/item_other"
+            android:checkable="true"
+            android:icon="@drawable/ic_hei"
+            android:title="其他类型"/>
+    </group>
+
+    <item android:title=" ">
+        <menu>
+            <item
+                android:id="@+id/sub_exit"
+                android:checkable="true"
+                android:icon="@drawable/ic_ban"
+                android:title="退出应用"/>
+        </menu>
+    </item>
+</menu>

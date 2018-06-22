@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/ic_search"
+        android:title="搜  索"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_filter"
+        android:icon="@drawable/ic_filter_list"
+        android:title="类别"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/filter_ui"
+                android:title="ui"/>
+            <item
+                android:id="@+id/filter_data"
+                android:title="data"/>
+            <item
+                android:id="@+id/filter_test"
+                android:title="test"/>
+            <item
+                android:id="@+id/filter_other"
+                android:title="other"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_about"
+        android:title="关  于"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_exit"
+        android:title="退  出"
+        app:showAsAction="never"/>
+</menu>

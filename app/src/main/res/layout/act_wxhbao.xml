@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleGravity="left|bottom"
+            app:expandedTitleMargin="16dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax">
+
+                <com.bsx.baolib.view.CustomShapeImageView
+                    android:id="@+id/siv_lucky"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop" />
+
+                <com.bsx.baolib.view.WaveView
+                    android:id="@+id/backdrop"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="好运多红包" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="25dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:gravity="center"
+                    android:text="微信红包自动抢功能"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_auto_wxhb"
+                    android:layout_width="48dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/selector_check_box"
+                    android:button="@null"
+                    android:checked="true" />
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="15dp" />
+
+            <TextView
+                android:id="@+id/tv_mode_hbao"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:gravity="left|center"
+                android:text="设置抢包模式"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_mode_hbao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_set_mode_hb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="抢红包模式" />
+
+                    <TextView
+                        android:id="@+id/tv_show_mode_hb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="自动抢"
+                        android:textColor="@color/red"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_set_delay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="延迟时间" />
+
+                    <TextView
+                        android:id="@+id/tv_show_delay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="丝毫不懈怠"
+                        android:textColor="@color/red"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_set_after_open"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="拿到红包后" />
+
+                    <TextView
+                        android:id="@+id/tv_show_open_hb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="拆红包"
+                        android:textColor="@color/red"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_set_after_suc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="抢包成功后" />
+
+                    <TextView
+                        android:id="@+id/tv_show_after_succeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="静静地看着"
+                        android:textColor="@color/red"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="15dp" />
+
+            <TextView
+                android:id="@+id/tv_mode_notify"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:gravity="left|center"
+                android:text="设置提醒模式"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_mode_notify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="声音" />
+
+                    <CheckBox
+                        android:id="@+id/cb_sound"
+                        android:layout_width="48dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/selector_check_box"
+                        android:button="@null"
+                        android:checked="true" />
+                </RelativeLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="震动" />
+
+                    <CheckBox
+                        android:id="@+id/cb_shake"
+                        android:layout_width="48dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/selector_check_box"
+                        android:button="@null"
+                        android:checked="true" />
+                </RelativeLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="夜间勿扰(23:00~7:00)" />
+
+                    <CheckBox
+                        android:id="@+id/cb_night_not"
+                        android:layout_width="48dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/selector_check_box"
+                        android:button="@null"
+                        android:checked="true" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="15dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:gravity="center"
+                    android:text="急性子,开启终极模式"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_mode_fastest"
+                    android:layout_width="48dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/selector_check_box"
+                    android:button="@null" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_set_lucky"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_luck"
+        app:backgroundTint="@color/gold"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="bottom|right|end"
+        app:rippleColor="@color/blue" />
+
+</android.support.design.widget.CoordinatorLayout>
